@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 const AllCampusesView = (props) => {
@@ -8,6 +9,9 @@ const AllCampusesView = (props) => {
         There are no campuses.
         <Link to={`../newcampus`}>
           <button>Add New Campus</button>
+        </Link>
+        <Link to="/">
+          <button>Return Home</button>
         </Link>
       </div>
     );
@@ -29,7 +33,10 @@ const AllCampusesView = (props) => {
       <Link to={`../newcampus`}>
         <button>Add New Campus</button>
       </Link>
-    </div>
+      <Link to="/">
+          <button>Return Home</button>
+        </Link>
+        </div>
   );
 };
 

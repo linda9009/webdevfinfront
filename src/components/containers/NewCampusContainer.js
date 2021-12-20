@@ -10,10 +10,10 @@ class NewCampusContainer extends Component {
     constructor(props){
         super(props);
         this.state = {
-          name: "", 
+          name: null, 
           imageUrl: "", 
-          address: "", 
-          description: "",
+          address: null, 
+          description: null,
           redirect: false, 
           redirectId: null
         };
@@ -36,7 +36,7 @@ class NewCampusContainer extends Component {
         };
         
         let newCampus = await this.props.addCampus(campus);
-
+        if (campus.name && campus.address){
         this.setState({
           name: "", 
           imageUrl: "", 
@@ -44,7 +44,7 @@ class NewCampusContainer extends Component {
           description: "",
           redirect: true, 
           redirectId: newCampus.id
-        });
+        });}
     }
 
     componentWillUnmount() {
